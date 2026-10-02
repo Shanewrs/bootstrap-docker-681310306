@@ -1,0 +1,219 @@
+// ==========================================
+// EARTH TONE // OLIVE & CREAMY MINIMAL THEME
+// ==========================================
+
+// Google Fonts: Minimal Typography
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Prompt:wght@300;400;500;600&display=swap');
+
+// 1. Earth Tone Palette Definition
+$olive-deep: #273224;      // Deep Forest Olive
+$olive-primary: #4F6347;   // Classic Olive Green
+$olive-soft: #708468;      // Soft Olive Sage
+$olive-light: #94A68C;     // Light Sage
+$cream-light: #FBF9F5;     // Clean Cream
+$cream-bg: #F7F4EC;        // Warm Linen Cream
+$cream-tertiary: #EFEBE0;  // Cream Accent
+$cream-border: #E3DDD0;    // Soft Earth Border
+$earth-text: #2D332A;      // Charcoal Olive
+$earth-muted: #6F786C;     // Muted Sage Text
+$terracotta: #B86B53;      // Subtle Terracotta Accent
+
+// 2. Bootstrap Variable Overrides (Before Import)
+$font-family-base: 'Prompt', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+$primary: $olive-primary;
+$secondary: $olive-soft;
+$success: #587353;
+$info: #6F856B;
+$warning: #C7955F;
+$danger: $terracotta;
+$light: $cream-bg;
+$dark: $olive-deep;
+
+$body-bg: $cream-bg;
+$body-color: $earth-text;
+
+$border-radius: 0.75rem;
+$border-radius-sm: 0.5rem;
+$border-radius-lg: 1.1rem;
+$btn-border-radius: 0.65rem;
+
+$card-border-radius: 0.95rem;
+$card-border-color: $cream-border;
+$card-bg: #ffffff;
+$card-box-shadow: 0 4px 20px rgba(39, 50, 36, 0.04);
+
+// 3. Import Bootstrap
+@import "bootstrap/scss/bootstrap";
+
+// 4. Custom Theme CSS Variables (Light Creamy & Dark Olive)
+[data-bs-theme="light"], :root {
+  --bs-body-bg: #F7F4EC;
+  --bs-body-color: #2D332A;
+  --bs-tertiary-bg: #EEE9DD;
+  --bs-secondary-bg: #E4DECFA;
+  --bs-card-bg: #FDFBF7;
+  --bs-border-color: #E2DBD0;
+  --bs-border-color-translucent: rgba(79, 99, 71, 0.15);
+  --bs-secondary-color: #6F786C;
+  --bs-tertiary-color: #8C9688;
+  
+  --bs-primary: #4F6347;
+  --bs-primary-rgb: 79, 99, 71;
+  --bs-primary-hover-bg: #3E4E38;
+}
+
+[data-bs-theme="dark"] {
+  --bs-body-bg: #1B221A;
+  --bs-body-color: #E2E8DF;
+  --bs-tertiary-bg: #242D22;
+  --bs-secondary-bg: #2C3729;
+  --bs-card-bg: #20271E;
+  --bs-border-color: #354232;
+  --bs-border-color-translucent: rgba(148, 166, 140, 0.18);
+  --bs-secondary-color: #99A894;
+  --bs-tertiary-color: #798775;
+  
+  --bs-primary: #869C7E;
+  --bs-primary-rgb: 134, 156, 126;
+  --bs-primary-hover-bg: #98AE90;
+}
+
+// 5. Minimalist Typography & Elements
+body {
+  font-weight: 300;
+  letter-spacing: -0.012em;
+  line-height: 1.65;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  color: inherit;
+}
+
+// 6. Refined Card & Image Styles
+.card {
+  border: 1px solid var(--bs-border-color);
+  background-color: var(--bs-card-bg);
+  box-shadow: 0 4px 18px rgba(39, 50, 36, 0.04);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(39, 50, 36, 0.08);
+  }
+}
+
+// Aesthetic Earth-Tone SVG Placeholder / Thumbnails
+.bd-placeholder-img {
+  rect {
+    fill: #708468 !important;
+    transition: fill 0.3s ease;
+  }
+  text {
+    fill: #F7F4EC !important;
+    font-family: $font-family-base;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+  }
+}
+
+[data-bs-theme="dark"] .bd-placeholder-img {
+  rect {
+    fill: #2E3A2B !important;
+  }
+  text {
+    fill: #C6D3C2 !important;
+  }
+}
+
+// 7. Earth Tone Buttons
+.btn-primary {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  color: #FDFBF7;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  padding: 0.55rem 1.35rem;
+  box-shadow: 0 2px 8px rgba(79, 99, 71, 0.18);
+  transition: all 0.2s ease;
+
+  &:hover, &:focus, &:active {
+    background-color: var(--bs-primary-hover-bg);
+    border-color: var(--bs-primary-hover-bg);
+    color: #FFFFFF;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(79, 99, 71, 0.25);
+  }
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border-color: var(--bs-border-color);
+  color: var(--bs-body-color);
+  font-weight: 400;
+  padding: 0.55rem 1.35rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: var(--bs-tertiary-bg);
+    border-color: var(--bs-secondary-color);
+    color: var(--bs-body-color);
+  }
+}
+
+.btn-outline-secondary {
+  border-color: var(--bs-border-color);
+  color: var(--bs-secondary-color);
+  font-size: 0.82rem;
+  font-weight: 400;
+
+  &:hover {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    color: #FFFFFF;
+  }
+}
+
+// 8. Custom Theme Switcher Button (Replace Violet with Olive)
+.btn-bd-primary {
+  --bd-olive-bg: #4F6347;
+  --bs-btn-font-weight: 500;
+  --bs-btn-color: #FDFBF7;
+  --bs-btn-bg: var(--bd-olive-bg);
+  --bs-btn-border-color: var(--bd-olive-bg);
+  --bs-btn-hover-color: #FFFFFF;
+  --bs-btn-hover-bg: #3E4E38;
+  --bs-btn-hover-border-color: #3E4E38;
+  --bs-btn-focus-shadow-rgb: 79, 99, 71;
+  --bs-btn-active-bg: #323F2D;
+  --bs-btn-active-border-color: #323F2D;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(39, 50, 36, 0.15);
+}
+
+// Navbar styling
+.navbar-dark.bg-dark {
+  background-color: $olive-deep !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+// Footer styling
+footer {
+  border-top: 1px solid var(--bs-border-color);
+  color: var(--bs-secondary-color);
+  background-color: var(--bs-tertiary-bg);
+  
+  a {
+    color: var(--bs-primary);
+    text-decoration: none;
+    transition: opacity 0.2s;
+    &:hover {
+      text-decoration: underline;
+      opacity: 0.85;
+    }
+  }
+}
